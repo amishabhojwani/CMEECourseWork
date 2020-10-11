@@ -1,4 +1,0 @@
-#1 Count how many lines are in each file
-wc -l *.fasta
-#2 Print everything starting from the second line for the E. coli genome
-cat tail less?
