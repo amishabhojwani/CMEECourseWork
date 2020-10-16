@@ -1,2 +1,1 @@
-My CMEE Coursework Repository
-Do I like this better
+My CMEE Coursework Repository has a directory for each week of the course

@@ -7,15 +7,21 @@
 # Arguments: 1 -> tab delimited file
 # Date: Oct 2020
 
-echo "Looking for file: $1..."
-if test -e $1;
-    then echo "File Located"
-        elif [[ $1 = *.txt ]]
-        echo "Checking if the file is tab delimited"
-            then echo "Creating a comma delimited version of $1..."
-            cat $1 | tr -s "\t" "," >> $1.csv
-            
-            echo "Done!"
+echo "Checking file: $1..."
+if test -e $1; #test if the file exists
+    then 
+        if test -s $1; #test if the size of the file is greater than 0
+            then 
+                if [[ $1 = *.txt || $1 = *.tsv ]]; #check if the file type is supported (is .txt or .tsv)
+                    then echo "Creating a comma delimited version of $1..."
+                    x="$1"
+                    y=${x%.*} #remove file extension
+                    cat $1 | tr -s "\t" "," >> $y.csv #substitute tabs for commas and add csv extension
+                    echo "Done! Your new file is $y.csv"
+                    else echo "File type not supported"
+                fi
+            else echo "File is empty"
+        fi
     else echo "File not found"
 fi
 
