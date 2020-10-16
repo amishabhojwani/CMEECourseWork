@@ -8,19 +8,27 @@
 # Date: Oct 2020
 
 echo "Checking file: $1..."
+
+# Test for arguments
+if [[ $# -eq 0 ]]
+  then
+  echo "No file provided"
+  exit 
+fi
+
 if test -e $1 #test if the file exists
     then 
-        if test -s $1 #test if the size of the file is greater than 0
+        if [[ $1 = *.csv ]] #check if the file is csv
             then 
-                if [[ $1 = *.csv ]] #check if the file is csv
+                if test -s $1 #test if the size of the file is greater than 0
                     then echo "Creating a space delimited version of $1..."
                     x="$1"
                     y=${x%.*} #remove file extension
                     cat $1 | tr -s "," " " >> $y.txt #substitute commas for spaces and add .txt extension
                     echo "Done! Your new file is $y.txt"
-                    else echo "File is not csv"
+                    else echo "File is empty"
                 fi
-            else echo "File is empty"
+            else echo "File is not csv"
         fi
     else echo "File not found"
 fi

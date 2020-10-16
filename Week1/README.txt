@@ -6,7 +6,6 @@ The first weeks directory has four subdirectories:
 │   │   ├── boilerplate.sh - prints: This is a boilerplate!
 │   │   ├── CompileLatex.sh - compiles a pdf from .bib files and a .tex file in one same directory
 │   │   ├── ConcatenateTwoFiles.sh - concatenates the contents of two files and outputs it into a third in the Data directory
-│   │   ├── ConcatenateTwoFiles1.sh - copy of ConcatenateTwoFiles.sh, trying to make it cleaner
 │   │   ├── CountLines.sh - counts the lines in a file
 │   │   ├── csvtospace.sh - converts the commas in a .csv file to spaces (.txt file)
 │   │   ├── FirstBiblio.bib - biblio for CompileLatex.sh
@@ -33,4 +32,4 @@ The first weeks directory has four subdirectories:
 │   │   └── test.txt - text test file, 2 lines
 │   ├── README.txt
 │   ├── Results - empty, no results for Week1
-│   └── Sandbox - testing files from Code and Data directories
+│   └── Sandbox - files for testing scripts in Code and Data directories

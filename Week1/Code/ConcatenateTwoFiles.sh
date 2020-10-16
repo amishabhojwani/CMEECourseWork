@@ -7,11 +7,11 @@
 # Arguments: 2 -> files with data to concatenate
 # Date: Oct 2020
 
-echo "Checking files $1 and $2..."
+echo "Checking files..."
 
-if [[ $# -eq 0 ]] #check for arguments
+if [[ $# <2 ]] #check for arguments
   then
-    echo "No files given"
+    echo "Please provide 2 files"
     exit 
 fi
 
