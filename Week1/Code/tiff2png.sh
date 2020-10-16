@@ -10,9 +10,16 @@
 #format and empty
 
 echo "Checking .tif file(s)..."
-for f in *.tif; 
+
+if [[ $# -eq 0 ]]
+  then
+    echo "No file or directory given"
+    exit 
+fi
+
+for f in *.tiff; 
     do echo "Converting $f"; 
-    convert "$f"  "$(basename "$f" .tif).png"; 
+    convert "$f"  "$(basename "$f" .tiff).png"; 
 done echo "Done!"
 
 #Exit

@@ -8,6 +8,13 @@
 # Date: Oct 2020
 
 echo "Checking files $1 and $2..."
+
+if [[ $# -eq 0 ]] #check for arguments
+  then
+    echo "No files given"
+    exit 
+fi
+
 if test -e $1 #test if $1 exists
     then
         if test -e $2 #test if $2 exists
