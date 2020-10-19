@@ -179,7 +179,7 @@ Please provide 2 files
 
 Code ran without errors
 
-Time consumed = 0.00375s
+Time consumed = 0.00327s
 
 ======================================================================
 Inspecting script file tiff2png.sh...
@@ -221,7 +221,7 @@ No .tif file present
 
 Code ran without errors
 
-Time consumed = 0.00470s
+Time consumed = 0.00555s
 
 ======================================================================
 Inspecting script file variables.sh...
@@ -324,7 +324,7 @@ No file provided
 
 Code ran without errors
 
-Time consumed = 0.00477s
+Time consumed = 0.00441s
 
 ======================================================================
 Inspecting script file FirstBiblio.bib...
@@ -402,7 +402,7 @@ No file provided
 
 Code ran without errors
 
-Time consumed = 0.00392s
+Time consumed = 0.00516s
 
 ======================================================================
 Inspecting script file boilerplate.sh...
@@ -437,7 +437,7 @@ This is a shell script!
 
 Code ran without errors
 
-Time consumed = 0.00374s
+Time consumed = 0.00605s
 
 ======================================================================
 Inspecting script file FirstExample.tex...
@@ -535,7 +535,7 @@ No file provided
 
 Code ran without errors
 
-Time consumed = 0.00540s
+Time consumed = 0.00557s
 
 ======================================================================
 Inspecting script file CompileLatex.sh...
@@ -592,7 +592,7 @@ No .tex file provided
 
 Code ran without errors
 
-Time consumed = 0.00566s
+Time consumed = 0.00390s
 
 ======================================================================
 Inspecting script file MyExampleScript.sh...
@@ -632,7 +632,7 @@ Hello mhasoba
 
 Code ran without errors
 
-Time consumed = 0.00721s
+Time consumed = 0.00534s
 
 ======================================================================
 Inspecting script file UnixPrac.txt...
