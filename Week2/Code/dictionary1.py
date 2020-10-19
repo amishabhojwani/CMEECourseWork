@@ -25,9 +25,11 @@ Rodentia=[]
 Afrosoricida=[]
 Carnivora=[]
 
-for x, y in taxa:
-        if x[1] == 'Chiroptera':
-                Chiroptera.append(x[0])
+orderslist=
+
+for x in taxa:
+        for x[1] == 'Chiroptera':
+                order.append(x[0])
                 #print(Chiroptera)
         if x[1] == 'Rodentia':
                 Rodentia.append(x[0])

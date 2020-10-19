@@ -11,18 +11,24 @@ __license__= '-'
 import sys
 
 ## functions ##
-"""Find the value of x with an exponent of 0.5"""
+
 def foo_1(x):
-    return x ** 0.5
+    
+    """Find the square root of x"""
+    y=x ** 0.5
+    return "The square root of %f is %f" % (x, y)
 
-"""Return largest value"""
 def foo_2(x, y):
+    
+    """Return largest value of two"""
     if x > y:
-        return x
-    return y
+        return "%f is larger than %f" % (x, y)
+    return "%f is larger than %f" % (y, x)
 
-"""Move the largest value to the end of the list"""
+
 def foo_3(x, y, z):
+    
+    """Move the largest value of three to the end of the list"""
     if x > y:
         tmp = y
         y = x
@@ -31,25 +37,49 @@ def foo_3(x, y, z):
         tmp = z
         z = y
         y = tmp
-    return [x, y, z]
+    return "%f is larger than %f and %f" % (z, x, y)
 
-"""Method1 to determine the factorial of x"""
+
 def foo_4(x):
+
+    """Determine the factorial of x through iterations"""
     result = 1
     for i in range(1, x + 1):
         result = result * i
-    return result
+    return "The factorial of %f is %f" % (i, result)
 
-"""Method2 to determine the factorial of x, recursive function"""
-def foo_5(x): 
-    if x == 1:
-        return 1
-    return x * foo5(x - 1)
 
-"""Method3 to determine the factorial of x"""     
+#def foo_5(x):
+#
+#    """Determine the factorial of x through a recursive function"""
+#    
+#    if x == 1:
+#        return "The factorial of %f is 1" % x
+#    y = x * foo_5(x - 1)
+#    return "The factorial of %f is %f" % (x, y)
+
+
 def foo_6(x):
+
+    """Determine the factorial of x"""     
     facto = 1
-    while x >= 1:
-        facto = facto * x
-        x = x - 1
-    return facto
+    y = x
+    while y >= 1:
+        facto = facto * y
+        y = y - 1
+    return "The factorial of %f is %f" % (x, facto)
+
+def main(argv):
+    print(foo_1(4))
+    print(foo_1(11))
+    print(foo_2(3, 6))
+    print(foo_2(56, 7))
+    print(foo_3(2, 14, 8))
+    print(foo_3(123, 33, 78))
+    print(foo_4(5))
+    #print(foo_5(5))
+    print(foo_6(5))
+
+if (__name__ == "__main__"):
+    status = main(sys.argv)
+    sys.exit(status)
