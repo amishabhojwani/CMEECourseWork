@@ -1,3 +1,11 @@
+#!/usr/bin/env python3
+
+"""Shows functionality of loops"""
+
+__author__ = 'Amisha Bhojwani (a.bhojwani20@imperial.ac.uk)'
+__version__ = '0.0.1'
+__license__ = "License for this code/program"
+
 #print hello once for every multiple of 3 within the range
 for j in range(12):
     if j % 3==0:

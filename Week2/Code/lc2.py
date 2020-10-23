@@ -1,3 +1,11 @@
+#!/usr/bin/env python3
+
+"""Practical testing loops and comprehensions"""
+
+__author__ = 'Amisha Bhojwani (a.bhojwani20@imperial.ac.uk)'
+__version__ = '0.0.1'
+__license__ = "License for this code/program"
+
 # Average UK Rainfall (mm) for 1910 by month
 # http://www.metoffice.gov.uk/climate/uk/datasets
 rainfall = (('JAN',111.4),

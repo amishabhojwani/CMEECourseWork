@@ -1,3 +1,11 @@
+#!/usr/bin/env python3
+
+"""Shows functionality of loops"""
+
+__author__ = 'Amisha Bhojwani (a.bhojwani20@imperial.ac.uk)'
+__version__ = '0.0.1'
+__license__ = "License for this code/program"
+
 #FOR loops
 ################
 #prints a list from range 0-5

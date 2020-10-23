@@ -1,3 +1,12 @@
+#!/usr/bin/env python3
+
+"""Reads a file containing species information and
+writes a file with only species and body mass"""
+
+__author__ = 'Amisha Bhojwani (a.bhojwani20@imperial.ac.uk)'
+__version__ = '0.0.1'
+__license__ = "License for this code/program"
+
 import csv
 
 # Read a file containing:

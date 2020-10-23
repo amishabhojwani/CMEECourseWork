@@ -12,8 +12,8 @@ import sys
 
 """Read two DNA sequences from twoseq.fasta"""
 
-file = open('twoseq.fasta')
-all_lines = file.readlines()
+file = open('../Data/twoseq.fasta')
+all_lines = file.readlines()[1:]
 
 seq2 = all_lines[0]
 seq1 = all_lines[1]
@@ -59,6 +59,7 @@ def calculate_score(s1, s2, l1, l2, startpoint):
     return score
 
 def main(argv):
+    """Testing"""
     print("\n\nTesting the function with some example starting points:\n")
     print(calculate_score(s1, s2, l1, l2, 0))
     print(calculate_score(s1, s2, l1, l2, 1))
@@ -80,7 +81,7 @@ print(s1)
 print("Best score:", my_best_score)
 
 """Write a txt file with the best alignment and its' score"""
-file = open('bestalign.txt', 'w')        
+file = open('../Results/bestalign.txt', 'w')        
 file.write(f'{my_best_align}{s1} \nBest score: {my_best_score}')
 file.close()
 
