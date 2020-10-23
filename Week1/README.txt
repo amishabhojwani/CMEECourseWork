@@ -28,7 +28,7 @@ The first weeks directory has four subdirectories:
 │   │   ├── 407228326.fasta - shows the genomic sequence of Homo sapiens x Mus musculus hybrid cell line
 │   │   ├── 407228412.fasta - shows a Homo sapiens genomic sequence
 │   │   ├── E.coli.fasta - E.coli genomic sequence
-│   │   ├── spawannxs.txt - list of protectes marine and coastal flora
+│   │   ├── spawannxs.txt - list of protected marine and coastal flora
 │   │   └── test.txt - text test file, 2 lines
 │   ├── README.txt
 │   ├── Results - empty, no results for Week1

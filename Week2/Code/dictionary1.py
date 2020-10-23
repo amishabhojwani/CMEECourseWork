@@ -19,32 +19,13 @@ taxa = [ ('Myotis lucifugus','Chiroptera'),
 #  OR,
 # 'Chiroptera': {'Myotis lucifugus'} ... etc
 
-taxa_dic={}        
-Chiroptera=[]
-Rodentia=[]
-Afrosoricida=[]
-Carnivora=[]
 
-orderslist=
-
-for x in taxa:
-        for x[1] == 'Chiroptera':
-                order.append(x[0])
-                #print(Chiroptera)
-        if x[1] == 'Rodentia':
-                Rodentia.append(x[0])
-                #print(Rodentia)
-        if x[1] == 'Afrosoricida':
-                Afrosoricida.append(x[0])
-                #print(Afrosoricida)
-        if x[1] == 'Carnivora':
-                Carnivora.append(x[0])
-                #print(Carnivora)
-        
-taxa_dic['Chiroptera']=Chiroptera
-taxa_dic['Rodentia']=Rodentia
-taxa_dic['Afrosoricida']=Afrosoricida
-taxa_dic['Carnivora']=Carnivora
+taxa_dic = {}
+for values in taxa:
+    order = values[1]
+    species = []
+    for values in taxa:
+        if order == values[1]:
+            species.append(values[0])
+            taxa_dic[values[1]] = species
 print(taxa_dic)
-
-#Exit

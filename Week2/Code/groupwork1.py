@@ -13,8 +13,8 @@ import sys
 ## VARIABLES ##
 ###############
 
-seq2 = "ATCGCCGGATTACGGG"
-seq1 = "CAATTCGGAT"
+seq2 = "a"
+seq1 = "b"
 
 ###############
 ## FUNCTIONS ##
@@ -93,8 +93,12 @@ def printbestalign(s1, s2, l1, l2):
 
     return my_best_align
 
+#this is broken
 def main(argv):
-    sqT = readfasta(argv[1], argv[2])
+    print(str(argv[1])) #needs an if statement here cant figure it out rn
+        sqT = readfasta(argv[1], argv[2])
+    else:
+        sqT = readfasta()
     sq1 = sqT[0]
     sq2 = sqT[1]
     slT = assignvar(sq1, sq2)
@@ -102,7 +106,7 @@ def main(argv):
     s2 = slT[1]
     l1 = slT[2]
     l2 = slT[3]
-    printbestalign(s1, s2, l1, l2)
+   printbestalign(s1, s2, l1, l2)
 
 
 
