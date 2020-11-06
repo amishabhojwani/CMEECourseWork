@@ -1,11 +1,3 @@
-#set start
-setwd("~/Documents/CMEECourseWork/Week3/Code")
-
-#dependencies
-require(ggplot2)
-require(tidyverse)
-require(dplyr)
-
 #read and explore data
 MyDF <- read.csv("../Data/EcolArchives-E089-51-D1.csv")
 str(MyDF)
@@ -58,6 +50,7 @@ Results <- MyDF %>%
             median(log(Prey.mass)),
             mean(log(Prey.mass/Predator.mass)),
             median(log(Prey.mass/Predator.mass)))
+
 # name the columns
 names(Results) <- c("Type.of.feeding.interaction",
                   "Mean_log.predator.mass",

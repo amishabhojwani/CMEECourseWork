@@ -2,9 +2,6 @@
 ################## Wrangling the Pound Hill Dataset ############
 ################################################################
 
-############# set wd ###############
-setwd("~/Documents/CMEECourseWork/Week3/Code")
-
 ############# Load the dataset ###############
 # header = false because the raw data don't have real headers
 MyData <- as.matrix(read.csv("../Data/PoundHillData.csv", header = FALSE))

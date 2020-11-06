@@ -1,9 +1,9 @@
 #install the sqlite package
-install.packages('sqldf')
+#install.packages('sqldf')
 
-# To load the packages and set directory
+# Dependency
 library(sqldf)
-setwd("~/Documents/CMEECourseWork/Week3/Code")
+
 
 # The command below opens a connection to the database.
 #If the database does not yet exist, one is created in the working directory of R.

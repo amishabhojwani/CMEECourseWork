@@ -1,6 +1,3 @@
-#set start
-setwd("~/Documents/CMEECourseWork/Week3/Code")
-
 #dependencies
 require(ggplot2)
 
@@ -11,7 +8,7 @@ a <- read.table("../Data/Results.txt", header = TRUE)
 a$ymin <- rep(0, dim(a)[1]) 
 
 #write pdf
-pdf("../Results/MyBars.pdf", 11.7, 8.3)
+pdf("../Results/MyBars.pdf")
 
 # Print the first linerange
 p <- ggplot(a)
@@ -53,7 +50,8 @@ p <- p + scale_x_continuous("My x axis",
   scale_y_continuous("My y axis") + 
   theme_bw() + 
   theme(legend.position = "none") 
-p
+
+print(p)
 
 #output pdf
 graphics.off()

@@ -1,6 +1,3 @@
-#set start
-setwd("~/Documents/CMEECourseWork/Week3/Code")
-
 #dependencies
 require(ggplot2)
 
@@ -16,7 +13,7 @@ my_data <- data.frame(x = x, y = y)
 my_lm <- summary(lm(y ~ x, data = my_data))
 
 #write pdf
-pdf("../Results/MyLinReg.pdf", 11.7, 8.3)
+pdf("../Results/MyLinReg.pdf")
 
 # plot the data
 p <-  ggplot(my_data, aes(x = x, y = y,
@@ -39,7 +36,7 @@ p <- p + geom_text(aes(x = 60, y = 0,
                    parse = TRUE, size = 6, 
                    colour = "blue")
 
-p
+print(p)
 
 #close pdf
 graphics.off()

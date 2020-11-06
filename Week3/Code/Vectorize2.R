@@ -2,38 +2,51 @@
 
 rm(list=ls())
 
-stochrick<-function(p0=runif(1000,.5,1.5),r=1.2,K=1,sigma=0.2,numyears=100)
-{
-  #initialize
-  N<-matrix(NA,numyears,length(p0))
-  N[1,]<-p0
+stochrick<-function(p0=runif(1000,.5,1.5),r=1.2,K=1,sigma=0.2,numyears=100) {
+  
+   #initialize
+  M<-matrix(NA,numyears,length(p0))
+  M[1,]<-p0
   
   for (pop in 1:length(p0)){ #loop through the populations
     
     for (yr in 2:numyears){ #for each pop, loop through the years
 
-      N[yr,pop] <- N[yr-1,pop] * exp(r * (1 - N[yr - 1,pop] / K) + rnorm(1,0,sigma))
+      M[yr,pop] <- M[yr-1,pop] * exp(r * (1 - M[yr - 1,pop] / K) + rnorm(1,0,sigma))
     
     }
   
   }
- return(N)
+ return(M)
 
-}
-
-stochrickvect <- function(p0=runif(1000,.5,1.5),r=1.2,K=1,sigma=0.2,numyears=100) {
-  
-  #initialise
-  N<-matrix(NA,numyears,length(p0))
-  N[1,]<-p0
-  
-  N[yr, pop] <- N[yr-1,pop] * exp(r * (1 - N[yr - 1,pop] / K) + rnorm(1,0,sigma))
-  
-  apply(N, 2, N[yr, pop])
 }
 
 # Now write another function called stochrickvect that vectorizes the above 
 # to the extent possible, with improved performance: 
 
-# print("Vectorized Stochastic Ricker takes:")
-# print(system.time(res2<-stochrickvect()))
+stochrickvect <- function(p0=runif(1000,.5,1.5),r=1.2,K=1,sigma=0.2,numyears=100) {
+  
+#initialise
+  N<-matrix(NA,numyears,length(p0))
+  N[1,]<-p0
+  
+  for (yr in 2:numyears) {
+  
+  N[yr,] <- N[yr-1,] * exp(r * (1 - N[yr-1,] / K) + rnorm(1,0,sigma))
+  #N[3, pop] <- N[2, pop] * exp(r * (1 - N[2, pop] / K) + rnorm(1,0,sigma))
+  
+  }
+
+  return(N)
+  
+}
+
+#check if they look OK
+#plot(N[,1], type="l", col="red")
+#lines(M[,1], type="l", col="blue")
+
+print("Stochastic Ricker takes:")
+print(system.time(res2<-stochrick()))
+
+print("Vectorized Stochastic Ricker takes:")
+print(system.time(res2<-stochrickvect()))

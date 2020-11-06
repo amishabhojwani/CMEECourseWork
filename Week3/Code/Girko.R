@@ -1,6 +1,3 @@
-#set start
-setwd("~/Documents/CMEECourseWork/Week3/Code")
-
 #dependencies
 require(ggplot2)
 

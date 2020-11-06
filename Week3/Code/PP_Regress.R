@@ -1,6 +1,3 @@
-#set start
-setwd("~/Documents/CMEECourseWork/Week3/Code")
-
 #dependencies
 require(ggplot2)
 
@@ -17,7 +14,11 @@ p <- ggplot(df, aes(log(Prey.mass), log(Predator.mass), colour = Predator.lifest
       theme(legend.position="bottom") +
       guides(colour = guide_legend(nrow = 1)) +
       coord_fixed(ratio = 1/5)
+
 p
+
+print(p)
+
 graphics.off()
 
 print("Saved your plot in the Results directory as: PP_plot.pdf")
