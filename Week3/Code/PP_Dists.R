@@ -1,3 +1,5 @@
+require(tidyverse)
+
 #read and explore data
 MyDF <- read.csv("../Data/EcolArchives-E089-51-D1.csv")
 str(MyDF)

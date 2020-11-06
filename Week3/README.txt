@@ -13,7 +13,7 @@ Week3
 │   ├── GPDD_Data.R - playing with mapping on R DEPENDENCY: maps
 │   ├── MyBars.R - annotating a plot DEPENDENCY: ggplot2
 │   ├── plotLin.R - plotting a linear regression DEPENDENCY: ggplot2
-│   ├── PP_Dists.R - create plots for subsets of data
+│   ├── PP_Dists.R - create plots for subsets of data DEPENDENCY tidyverse
 │   ├── PP_Regress.R - running linear models on subsets containing data for combinations of categorical variables DEPENDENCY: ggplot2
 │   ├── preallocate.R - examples of speed with preallocation of vectors
 │   ├── R_Conditionals.R - getting to know conditional statements in R
