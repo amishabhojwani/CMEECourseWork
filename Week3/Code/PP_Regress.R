@@ -41,7 +41,7 @@ for (interac in unique(df$Type.of.feeding.interaction)) {
     z <- na.omit(z)
     for (lifestage in unique(z$Predator.lifestage)) {
       y <- subset(z, z$Predator.lifestage==lifestage)
-      j <- lm(Predator.mass~Prey.mass, data = y)
+      j <- lm(log(Predator.mass)~log(Prey.mass), data = y)
       i <- summary(j)
       
       #appending coefficients to the empty vectors
