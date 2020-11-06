@@ -19,7 +19,8 @@ TreeHeight <- function(degrees, distance){
   return (height)
 }
 
-Heights.m <- TreeHeight(trees$Angle.degrees, trees$Distance.m)
-TreeHts <- data.frame(trees, Heights.m)
+Tree.Height.m <- TreeHeight(trees$Angle.degrees, trees$Distance.m)
+TreeHts <- data.frame(trees, Tree.Height.m)
 write.csv(TreeHts, "../Results/TreeHts.csv")
 
+print("Done. Your output file is in the Results directory as TreeHts.csv.")

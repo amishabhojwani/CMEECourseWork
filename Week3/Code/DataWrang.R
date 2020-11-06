@@ -23,6 +23,7 @@ fix(MyMetaData)
 # To get those species into columns and treatments into rows 
 MyData <- t(MyData) 
 head(MyData)
+colnames(MyData) #there's no column names, just "data"
 dim(MyData)
 
 ############# Replace species absences with zeros ###############
@@ -32,9 +33,12 @@ MyData[MyData == ""] = 0
 
 TempData <- as.data.frame(MyData[-1,],stringsAsFactors = F) #stringsAsFactors = F is important!
 colnames(TempData) <- MyData[1,] # assign column names from original data
+head(TempData)
+rownames(TempData) <- NULL #get rid of row names
+head(TempData)
 
 ############# Convert from wide to long format  ###############
-require(reshape2) # load the reshape2 package
+require(reshape2)
 
 ?melt #check out the melt function
 
@@ -52,3 +56,8 @@ dim(MyWrangledData)
 
 ############# Exploring the data ###############
 require(tidyverse)
+tibble::as_tibble(MyWrangledData) # convert to a tiblle, which is like a data frame but more manipulatable
+dplyr::glimpse(MyWrangledData) #like str(), but nicer!
+utils::View(MyWrangledData) #same as fix() or View()
+dplyr::filter(MyWrangledData, Count>100) #like subset(), but nicer!
+dplyr::slice(MyWrangledData, 10:15) # Look at an arbitrary set of data rows
