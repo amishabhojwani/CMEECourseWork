@@ -34,21 +34,4 @@ Week3
 │   ├── Resource.csv
 │   ├── Results.txt
 │   └── trees.csv
-├── README.txt
-└── Results
-    ├── Girko.pdf
-    ├── MyBars.pdf
-    ├── MyData.csv
-    ├── MyFirst-ggplot2-Figure.pdf
-    ├── MyLinReg.pdf
-    ├── pp_plot.pdf
-    ├── PP_plot.pdf
-    ├── PP_Regress_Results.csv
-    ├── PP_Results.csv
-    ├── Pred_Prey_Overlay.pdf
-    ├── Pred_Subplots.pdf
-    ├── Prey_Subplots.pdf
-    ├── SizeRatio_Subplots.pdf
-    ├── test.txt
-    └── TreeHts.csv
-
+└── README.txt
