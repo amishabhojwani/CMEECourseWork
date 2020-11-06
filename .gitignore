@@ -1,4 +1,4 @@
 *~ 
 *.tmp
 **/.Rhistory
-/Results/
+*/Results/*
