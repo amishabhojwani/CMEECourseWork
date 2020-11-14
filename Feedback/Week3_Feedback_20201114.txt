@@ -158,7 +158,7 @@ Output (only first 500 characters):
 
 Code ran without errors or warnings
 
-Time consumed = 0.17724s
+Time consumed = 0.16525s
 
 ======================================================================
 Inspecting script file browse.R...
@@ -211,7 +211,7 @@ debug: browser()
 
 Code ran without errors or warnings
 
-Time consumed = 0.22688s
+Time consumed = 0.21830s
 
 ======================================================================
 Inspecting script file preallocate.R...
@@ -275,7 +275,7 @@ Output (only first 500 characters):
  [1]  1  2  3  4  5  6  7  8  9 10
 96 bytes
    user  system elapsed 
-  0.022   0.000   0.022 
+  0.018   0.003   0.021 
    user  system elapsed 
       0       0       0 
 [1] "Preallocation"
@@ -288,7 +288,7 @@ Output (only first 500 characters):
 
 Code ran without errors or warnings
 
-Time consumed = 0.28522s
+Time consumed = 0.25998s
 
 ======================================================================
 Inspecting script file plotLin.R...
@@ -486,23 +486,20 @@ Output (only first 500 characters):
 
 
 **********************************************************************
-[1] "Mean of this sample was: -0.213760838161761"
-[1] "Mean of this sample was: -0.400028356659999"
-[1] "Mean of this sample was: -0.426648466873621"
-[1] "Mean of this sample was: -0.324853007161611"
-[1] "Mean of this sample was: -0.260852216357715"
-[1] "Mean of this sample was: -0.231340047023134"
-[1] "Mean of this sample was: -0.331794204092521"
-[1] "Mean of this sample was: -0.28901269091872"
-[1] "Mean of this sample was: -0.366464446596336"
-
+[1] "Mean of this sample was: 0.308709869488266"
+[1] "Mean of this sample was: 0.234316028105999"
+[1] "Mean of this sample was: 0.031928304952294"
+[1] "Mean of this sample was: 0.192713380249825"
+[1] "Mean of this sample was: 0.209940997995635"
+[1] "Mean of this sample was: 0.211193173366265"
+[1] "Mean of this sample was: 0.0878923335944129"
+[1] "Mean of this sample was: 0.0715399248083174"
+[1] "Mean of this sample was: 0.165032463843331"
+[1] "Mean of this sample was: -0.117206930551115"
+[1] "Mea
 **********************************************************************
 
 Encountered error or warning:
-Error in doit(popn) : Couldn't calculate mean: too few unique values!
-Error in doit(popn) : Couldn't calculate mean: too few unique values!
-Error in doit(popn) : Couldn't calculate mean: too few unique values!
-Error in doit(popn) : Couldn't calculate mean: too few unique values!
 Error in doit(popn) : Couldn't calculate mean: too few unique values!
 Error in doit(popn) : Couldn't calculate mean: too few unique values!
 
@@ -575,16 +572,16 @@ Output (only first 500 characters):
 **********************************************************************
 [1] "Stochastic Ricker takes:"
    user  system elapsed 
-  0.261   0.023   0.285 
+  0.246   0.024   0.271 
 [1] "Vectorized Stochastic Ricker takes:"
    user  system elapsed 
-  0.012   0.000   0.012 
+  0.011   0.000   0.011 
 
 **********************************************************************
 
 Code ran without errors or warnings
 
-Time consumed = 0.52461s
+Time consumed = 0.49858s
 
 ======================================================================
 Inspecting script file boilerplate.R...
@@ -624,7 +621,7 @@ Output (only first 500 characters):
 
 Code ran without errors or warnings
 
-Time consumed = 0.18177s
+Time consumed = 0.17472s
 
 ======================================================================
 Inspecting script file apply1.R...
@@ -654,18 +651,18 @@ Output (only first 500 characters):
 
 
 **********************************************************************
- [1]  0.21781105  0.58769686  0.25631194 -0.31226256 -0.35179399  0.17261537
- [7]  0.46816010  0.66465131  0.19167195  0.02209015
- [1] 1.0492035 1.0641887 1.2296171 0.7178117 0.8862651 0.9594982 0.7635571
- [8] 0.8539949 0.5352709 0.6576314
- [1]  0.69078983  0.10031199 -0.07989969  0.24485274  0.61140053 -0.11458281
- [7]  0.25759582  0.02107947  0.51536476 -0.32996045
+ [1]  0.11628681  0.20925616  0.19437044 -0.18674466 -0.02976915  0.38627808
+ [7] -0.24855788 -0.20225251 -0.65602021 -0.08880873
+ [1] 1.8008486 0.9018852 1.5103933 1.0330524 1.1723259 1.0743223 1.1602925
+ [8] 2.3454334 0.8827812 0.9281030
+ [1]  0.0541299147 -0.0104525595 -0.2838713924  0.1265316930 -0.3310474359
+ [6]  0.1297194981 -0.0187233964  0.3244562412  0.0009895931 -0.4976938016
 
 **********************************************************************
 
 Code ran without errors or warnings
 
-Time consumed = 0.18959s
+Time consumed = 0.15848s
 
 ======================================================================
 Inspecting script file PP_Regress.R...
@@ -994,7 +991,6 @@ Output (only first 500 characters):
 
 **********************************************************************
 [1] "a is TRUE"
-[1] "Less than a half"
 [1] "1  squared is 1"
 [1] "2  squared is 4"
 [1] "3  squared is 9"
@@ -1026,7 +1022,7 @@ Output (only first 500 characters):
 
 Code ran without errors or warnings
 
-Time consumed = 0.23522s
+Time consumed = 0.28787s
 
 ======================================================================
 Inspecting script file Vectorize1.R...
@@ -1063,16 +1059,16 @@ Output (only first 500 characters):
 **********************************************************************
 [1] "Using loops, the time taken is:"
    user  system elapsed 
-  0.093   0.001   0.094 
+  0.095   0.000   0.095 
 [1] "Using the in-built vectorized function, the time taken is:"
    user  system elapsed 
-  0.002   0.000   0.001 
+  0.001   0.000   0.001 
 
 **********************************************************************
 
 Code ran without errors or warnings
 
-Time consumed = 0.36659s
+Time consumed = 0.40708s
 
 ======================================================================
 Inspecting script file SQLinR.R...
@@ -1272,24 +1268,24 @@ Output (only first 500 characters):
 **********************************************************************
 [1] "The loopy, non-preallocation approach takes:"
    user  system elapsed 
-  0.037   0.008   0.045 
+  0.031   0.004   0.036 
 [1] "The loopy, but with preallocation approach takes:"
    user  system elapsed 
-  0.018   0.000   0.018 
+  0.016   0.000   0.015 
 [1] "The loopy, non-preallocation approach on a list takes:"
    user  system elapsed 
-  0.016   0.000   0.016 
+  0.015   0.000   0.014 
 [1] "The vectorized sapply approach takes:"
    user  system elapsed 
-  0.013   0.000   0.013 
+  0.012   0.000   0.011 
 [1] "The vectorized lapply approach takes:"
    user  system elapsed 
-  0.021   0.000   0.
+  0.011   0.000   0.
 **********************************************************************
 
 Code ran without errors or warnings
 
-Time consumed = 0.51125s
+Time consumed = 0.40305s
 
 ======================================================================
 Inspecting script file apply2.R...
@@ -1320,7 +1316,7 @@ Output (only first 500 characters):
 
 Code ran without errors or warnings
 
-Time consumed = 0.23491s
+Time consumed = 0.18204s
 
 ======================================================================
 Inspecting script file Ricker.R...
@@ -1358,7 +1354,7 @@ Output (only first 500 characters):
 
 Code ran without errors or warnings
 
-Time consumed = 0.22916s
+Time consumed = 0.21693s
 
 ======================================================================
 Inspecting script file break.R...
@@ -1413,7 +1409,7 @@ i equals  9
 
 Code ran without errors or warnings
 
-Time consumed = 0.19301s
+Time consumed = 0.17801s
 
 ======================================================================
 Inspecting script file Girko.R...
@@ -1537,7 +1533,7 @@ Output (only first 500 characters):
 
 Code ran without errors or warnings
 
-Time consumed = 0.16474s
+Time consumed = 0.15489s
 
 ======================================================================
 Inspecting script file GPDD_Data.R...
@@ -1626,7 +1622,7 @@ Finished running scripts
 
 Ran into 10 errors or warnings
 
-Total time used: 24.35s 
+Total time used: 17.82s 
 
 ======================================================================
 
