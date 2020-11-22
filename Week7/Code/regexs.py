@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-"""Translating the StochRick R script to python"""
+"""Practising Regex"""
 __author__ = 'Amisha (a.bhojwani20@imperial.ac.uk)'
 __version__ = '0.0.1'
 

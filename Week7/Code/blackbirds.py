@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-"""Translating the StochRick R script to python"""
+"""Using Regex"""
 __author__ = 'Amisha (a.bhojwani20@imperial.ac.uk)'
 __version__ = '0.0.1'
 
@@ -28,7 +28,7 @@ text = text.decode('ascii', 'ignore') # Now decode back to string
 # are multiple ways to skin this cat! Your solution could involve multiple
 # regular expression calls (slightly easier!), or a single one (slightly harder!)
 
-#multiple expressions
+#multiple expressions to select
 #Kingdom
 Kingdom = re.findall(r'Kingdom\s*([\w]*)', text)
 #Phylum
@@ -36,8 +36,6 @@ Phylum = re.findall(r'Phylum\s*([\w]*)', text)
 #Species
 Species = re.findall(r'Species\s*([\w*\s\w]*)', text)
 
+#put the expressions together
 for sp in range(len(Kingdom)):
     print(Kingdom[sp], ", ", Phylum[sp], ", ", Species[sp], "\n", sep="")
-
-#one line
-#Taxonomy = re.findall(r'Kingdom\s*([\w]*).\sPhylum\s*([\w]*)', text) need to describe whats in between and then parenthesis what i want

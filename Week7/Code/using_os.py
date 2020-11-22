@@ -30,6 +30,7 @@ for (dirpath, dirnames, filenames) in subprocess.os.walk(home):
         if x not in FilesDirsStartingWithC:
             FilesDirsStartingWithC.append(x)
 
+print("Files and directories starting with a C:")
 print(FilesDirsStartingWithC)
 
 #################################
@@ -49,6 +50,7 @@ for (dirpath, dirnames, filenames) in subprocess.os.walk(home):
         if x not in FilesDirsStartingWithCc:
             FilesDirsStartingWithCc.append(x)
 
+print("\nFiles and directories starting with a Cor a c:")
 print(FilesDirsStartingWithCc)
 
 #################################
@@ -68,4 +70,5 @@ for (dirpath, dirnames, filenames) in subprocess.os.walk("/home/amisha/Documents
         if x not in DirsStartingWithCc:
             DirsStartingWithCc.append(x)
 
+print("\nDirectories starting with a C or a c:")
 print(DirsStartingWithCc)
