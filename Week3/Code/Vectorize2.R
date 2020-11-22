@@ -45,8 +45,8 @@ stochrickvect <- function(p0=runif(1000,.5,1.5),r=1.2,K=1,sigma=0.2,numyears=100
 #plot(N[,1], type="l", col="red")
 #lines(M[,1], type="l", col="blue")
 
-print("Stochastic Ricker takes:")
-print(system.time(res2<-stochrick()))
+#print("Stochastic Ricker takes:")
+#print(system.time(res2<-stochrick()))
 
-print("Vectorized Stochastic Ricker takes:")
+print("Vectorized Stochastic Ricker in R takes:")
 print(system.time(res2<-stochrickvect()))
