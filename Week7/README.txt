@@ -3,6 +3,7 @@
 │   ├── fmr.R - make a plot from Nagy data
 │   ├── LV1.py - plotting and defining a function for the Lotka-Volterra model DEPENDENCIES: sys, scipy, scipy.integrate, matplotlib.pylab
 │   ├── LV2.py - improving the LV1.py script and making it an importable module DEPENDENCIES: sys, scipy, scipy.integrate, matplotlib.pylab
+│   ├── MyFirstJupyterNb.ipynb - example jupyter notebook
 │   ├── profileme2.py - profiling list comprehensions and string concatenations
 │   ├── profileme.py - profiling joins and appends
 │   ├── __pycache__
