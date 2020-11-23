@@ -2,3 +2,5 @@
 *.tmp
 *.Rhistory
 *.RData
+*.log
+*.aux

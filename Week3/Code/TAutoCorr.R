@@ -10,8 +10,8 @@ load("../Data/KeyWestAnnualMeanTemperature.RData")
 #save ast plot
 pdf("../Results/ast_plot.pdf")
 ats_p <- ggplot(ats, aes(Year, Temp)) +
-  geom_point(size=1) +
-  geom_smooth(method = lm)
+  geom_point(size=1)
+  #geom_smooth(method = lm)
 ats_p
 graphics.off()
 
