@@ -13,7 +13,7 @@
 │   ├── re4.py - extracting email addresses or their subsets DEPENDENCY: re
 │   ├── regexs.py - practising regex DEPENDENCY: re
 │   ├── run_fmr_R.py - script to run fmr.R DEPENDENCY: subprocess
-│   ├── run_LVs.py - script to run and profile both LV.py and LV2.py
+│   ├── run_LVs.py - script to run and profile both LV.py and LV2.py DEPENDENCIES: cProfile, subprocess, LV2
 │   ├── TestR.py - script to run TestR.R and understand subprocesses DEPENDENCY: subprocess
 │   ├── TestR.R - example Rscript
 │   ├── timeitme.py - profiling with timeit DEPENDENCIES: timeit, profileme2, profileme
