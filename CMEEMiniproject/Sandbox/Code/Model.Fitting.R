@@ -1,10 +1,9 @@
-#housekeeping
+# housekeeping
 setwd("~/Documents/CMEECourseWork/CMEEMiniproject/Sandbox/Code")
 rm(list = ls())
 graphics.off()
 
-#dependencies
-require("minpack.lm")
+# dependencies
 require("minpack.lm") # for Levenberg-Marquardt nlls fitting
 library("ggplot2")
 
@@ -22,14 +21,14 @@ library("ggplot2")
 ### Allometric scaling of traits ###
 ####################################
 
-#create a function object for the power law model
+# create a function object for the power law model
 powMod <- function(x, a, b) {
   return(a * x^b)
 } 
 
 MyData <- read.csv("../Data/GenomeSize.csv")
 
-#we are interested in Anisoptera (dragonflies) and Zygoptera (damselflies)
+# we are interested in Anisoptera (dragonflies) and Zygoptera (damselflies)
 Data2Fit <- subset(MyData, Suborder == "Anisoptera")
 Data2Fit <- Data2Fit[!is.na(Data2Fit$TotalLength),] # remove NA's
 plot(Data2Fit$TotalLength, Data2Fit$BodyWeight) #used base package plot
@@ -39,16 +38,18 @@ plot(Data2Fit$TotalLength, Data2Fit$BodyWeight) #used base package plot
 #   geom_point(size = (3),color="red") + theme_bw() + 
 #   labs(y="Body mass (mg)", x = "Wing length (mm)")
 
-#fit the data using nlls
+# fit the data using nlls
 PowFit <- nlsLM(BodyWeight ~ powMod(TotalLength, a, b), data = Data2Fit, start = list(a = .1, b = .1))
 summary(PowFit) #shows coefficients as intercepts, can also get as shown below
-#coef(PowFit)["a"]
-#coef(PowFit)["b"]
 
-#make a vector for x axis
+
+# make a vector for x axis to start visualising the fit
 Lengths <- seq(min(Data2Fit$TotalLength),max(Data2Fit$TotalLength),len=200)
 
-#calculate predicted line
+# to extract coefficients with use
+# coef(PowFit)["a"]
+# coef(PowFit)["b"]
+# calculate predicted line
 Predic2PlotPow <- powMod(Lengths,coef(PowFit)["a"],coef(PowFit)["b"])
 
 #plot
@@ -64,6 +65,7 @@ confint(PowFit)
 ### Comparing models ###
 ########################
 
+#using quadratic curve to compare nlls fit
 QuaFit <- lm(BodyWeight ~ poly(TotalLength,2), data = Data2Fit)
 Predic2PlotQua <- predict.lm(QuaFit, data.frame(TotalLength = Lengths))
 
@@ -71,6 +73,7 @@ Predic2PlotQua <- predict.lm(QuaFit, data.frame(TotalLength = Lengths))
 plot(Data2Fit$TotalLength, Data2Fit$BodyWeight)
 lines(Lengths, Predic2PlotPow, col = 'blue', lwd = 2.5)
 lines(Lengths, Predic2PlotQua, col = 'red', lwd = 2.5)
+legend("topleft", legend=c("Quadratic curve", "Power law"), col = c("red", "blue"), lty = 1, cex = 0.8)
 
 #formal comparison using R²
 RSS_Pow <- sum(residuals(PowFit)^2)  # Residual sum of squares
@@ -81,7 +84,7 @@ RSS_Qua <- sum(residuals(QuaFit)^2)  # Residual sum of squares
 TSS_Qua <- sum((Data2Fit$BodyWeight - mean(Data2Fit$BodyWeight))^2)  # Total sum of squares
 RSq_Qua <- 1 - (RSS_Qua/TSS_Qua)  # R-squared value
 
-RSq_Pow 
+RSq_Pow #when we compare them we see that they are 
 RSq_Qua #not useful, very similar values
 
 #formal comparison using AIC (Akaike Information Criterion)
