@@ -16,6 +16,8 @@ data <- read.csv("../Data/CRat.csv")
 # create data subsets for each ID (iden=identity)
 for (iden in unique(data$ID)) {
   subdata <- subset(data, data$ID == iden)
+  #subdata$N_TraitValue <- log(subdata$N_TraitValue)
+  #subdata$ResDensity <- log(subdata$ResDensity)
   write.csv(subdata, paste("../Data/data_subsets/subset_", iden, ".csv", sep=""))
 }
 
