@@ -54,8 +54,8 @@ for (interac in unique(df$Type.of.feeding.interaction)) {
       slopes <- c(slopes, i[["coefficients"]][[2]])
       intercepts <- c(intercepts, i[["coefficients"]][[1]])
       R2 <- c(R2, i[["r.squared"]])
-      F.stats <- c(F.stats, i[["fstatistic"]][[1]]) #fails in last loop
-      p.values <- c(p.values, i[["coefficients"]][[8]]) #fails in 5th loop
+      F.stats <- c(F.stats, i[["fstatistic"]][[1]])
+      p.values <- c(p.values, i[["coefficients"]][[8]]) 
     }
 }
 

@@ -1,0 +1,6 @@
+rm(list = ls())
+graphics.off()
+source("data_prep.R")
+source("starting_values.R")
+source("model_fitting.R")
+source("plotting.R")

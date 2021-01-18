@@ -3,20 +3,17 @@
 # Script: CompileLatex.sh
 # Description: Compiles a latex from .bib files and a tex file in a same directory
 #
-# Outputs pdf in the same file as input
+# Outputs pdf in the same folder as input
 # Arguments: 1 -> .tex file
 # Date: Oct 2020
 
 ## Test arguments
 if [[ $# -eq 0 ]]
-  then
-  echo "No .tex file provided"
+  then echo "No .tex file provided"
   exit 
-fi
-
-if [[ $1 = *.tex ]];
+elif [[ $1 = *.tex ]];
   then echo "Compiling your pdf"
-  else echo "Unsupported extension. Please provide a .tex file!"
+else echo "Unsupported extension. Please provide a .tex file!"
   exit
 fi
 

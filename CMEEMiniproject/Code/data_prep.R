@@ -14,16 +14,14 @@ data <- read.csv("../Data/CRat.csv")
 # nIDs <- length(unique(data$ID)) #308 IDs
 
 # create data subsets for each ID (iden=identity)
+success_ID <- c()
 for (iden in unique(data$ID)) {
   subdata <- subset(data, data$ID == iden)
-  #subdata$N_TraitValue <- log(subdata$N_TraitValue)
-  #subdata$ResDensity <- log(subdata$ResDensity)
   write.csv(subdata, paste("../Data/data_subsets/subset_", iden, ".csv", sep=""))
+  success_ID <- append(success_ID, iden)
 }
 
-# Testing with:
-# iden="40053"
-# subdata <- subset(data, data$ID==iden)
-# subdata <- subdata[!is.na(subdata$ResDensity),]
-# subdata <- subdata[!is.na(subdata$N_TraitValue),]
-# write.csv(subdata, paste("../Data/data_subsets/subset_", iden, ".csv", sep=""))
+IDs <- unique(data$ID)
+if (length(list.files("../Data/data_subsets"))==308) {
+  print("Created subsets of data for each functional response in ../Data/data_subsets")
+} else { print(paste("Failed to create subsets for the following ID's of functional responses: ", setdiff(IDs, success_IDs), sep = "")) }

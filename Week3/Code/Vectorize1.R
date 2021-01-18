@@ -11,8 +11,6 @@ SumAllElements <- function(M){
   return (Tot)
 }
 
-print("Using loops, the time taken for Vectorise1 is:")
-print(system.time(SumAllElements(M)))
+print(paste("Using loops, the time taken for Vectorise1 in R is ", round(system.time(res1<-SumAllElements(M))[[3]], 2), " seconds", sep=""))
 
-print("Using the in-built vectorized function for Vectorize1, the time taken is:")
-print(system.time(sum(M)))
+print(paste("Using the in-built vectorized function for Vectorize1 in R, the time taken is ", round(system.time(res1<-sum(M))[[3]], 2), " seconds", sep=""))

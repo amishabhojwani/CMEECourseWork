@@ -7,10 +7,11 @@
 # Arguments: 1 -> file or directory with .tif files
 # Date: Oct 2020
 
-if [[ $# -eq 0 ]]
+if [[ $# -eq 1 ]]
   then
-  echo "No .tif file present"
-  exit 
+    if [[ $1 == *.tif]]
+      then
+else echo "Please provide a .tif file" 
 fi
 
 for f in *.tif; 

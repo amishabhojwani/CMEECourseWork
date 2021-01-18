@@ -19,11 +19,11 @@ results_lms <- matrix(ncol = 3) #write results table
 colnames(results_lms) <- c("ID", "Agree", "Best_lm")
 for (iden in unique(data$ID)) {
   # load data subset
-  iden="40010"
+  #iden="40008"
   subdata <- read.csv(paste("../Data/data_subsets/subset_", iden, ".csv", sep="")) #read subset
   
   #fit linear model
-  try(lm1fit <- lm(NTraitValue ~ ResDensity, data=subdata), silent=TRUE)
+  try(lm1fit <- lm(N_TraitValue ~ ResDensity, data=subdata), silent=TRUE)
   
   # fit quadratic model
   try(lm2fit <- lm(N_TraitValue ~ poly(x=ResDensity, degree=2, raw = TRUE), data=subdata), silent = TRUE)
@@ -41,7 +41,7 @@ for (iden in unique(data$ID)) {
   plm2 = length(coef(lm2fit))
   plm3 = length(coef(lm3fit))
   
-  Rsq_lm = summary(lmfit)[["r.squared"]]
+  Rsq_lm = summary(lm1fit)[["r.squared"]]
   Rsq_lm2 = summary(lm2fit)[["r.squared"]] #using R-squared
   Rsq_lm3 = summary(lm3fit)[["r.squared"]]
   Rsq_high <- min(c(Rsq_lm, Rsq_lm2, Rsq_lm3))
@@ -81,12 +81,12 @@ for (iden in unique(data$ID)) {
 
 
 # output results
-results_lms <- as.data.frame(results_lms[-1,])
+results_lms <- results_lms[-1,]
 write.csv(results_lms, "../Results/lm_results.csv", row.names = FALSE)
-# nrow(results_lms) #298 output
+# nrow(results_lms)
 # results_lms[,2] <- as.integer(results_lms[,2])
-# sum(results_lms[,2]) #283 times they agree, 15 times they don't
-# sum(results_lms$Best_lm=="lm2") #146 times lm2, 152 times lm3
+# sum(results_lms[,2]) 
+# sum(results_lms$Best_lm=="lm2")
 
 ###################
 # plot the models #
@@ -96,15 +96,16 @@ write.csv(results_lms, "../Results/lm_results.csv", row.names = FALSE)
 require(ggplot2)
 
 #plotting
-pdf(file = paste("../Results/lm_compare_plots1/lms_compare.pdf", sep="")) #write pdf
+pdf(file = paste("../Results/lms_compare.pdf", sep="")) #write pdf
 for (iden in unique(data$ID)) {
-  iden="39911"
+  #iden="39911"
   subdata <- read.csv(paste("../Data/data_subsets/subset_", iden, ".csv", sep="")) #read subset
   
   p <- ggplot(subdata, aes(x=ResDensity, y=N_TraitValue)) +
   geom_point() +
   labs(x="Resource Density", y="Individual Trait Value", title = paste("ID = ", iden, sep="")) +
   theme(plot.title = element_text(hjust = 0.5)) +
+  geom_smooth(method = lm, formula = y ~ x, se=FALSE, colour="green") +
   geom_smooth(method = lm, formula = y ~ poly(x, degree = 2, raw = TRUE), se=FALSE, colour = "blue") +
   geom_smooth(method = lm, formula = y ~ poly(x, degree = 3, raw = TRUE), se=FALSE, colour = "red")
   

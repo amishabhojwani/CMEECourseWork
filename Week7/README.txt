@@ -6,11 +6,6 @@
 │   ├── MyFirstJupyterNb.ipynb - example jupyter notebook
 │   ├── profileme2.py - profiling list comprehensions and string concatenations
 │   ├── profileme.py - profiling joins and appends
-│   ├── __pycache__
-│   │   ├── LV1.cpython-38.pyc
-│   │   ├── LV2.cpython-38.pyc
-│   │   ├── profileme2.cpython-38.pyc
-│   │   └── profileme.cpython-38.pyc
 │   ├── re4.py - extracting email addresses or their subsets DEPENDENCY: re
 │   ├── regexs.py - practising regex DEPENDENCY: re
 │   ├── run_fmr_R.py - script to run fmr.R DEPENDENCY: subprocess
