@@ -4,7 +4,7 @@
 *.RData
 *.log
 *.aux
-Results/
+Results/*
 *.bbl
 *.blg
 *.fdb_latexmk
