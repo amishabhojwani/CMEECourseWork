@@ -13,6 +13,17 @@ data <- read.csv("../Data/CRat.csv")
 # which(NaNcols > 0) #no NaNs
 # nIDs <- length(unique(data$ID)) #308 IDs
 
+# length_subsets <- c() #explore length of subsets
+# for (iden in unique(data$ID)) {
+#   len <- nrow(subset(data, data$ID==iden))
+#   length_subsets <- append(length_subsets, len)
+# }
+# 
+# leq10 <- count(length_subsets<=10)/length(unique(data$ID))
+# leq100_50 <- count(length_subsets>=50 & length_subsets<=100)/length(unique(data$ID))
+# meq100 <- count(length_subsets>=100)/length(unique(data$ID))
+
+
 # create data subsets for each ID (iden=identity)
 success_ID <- c()
 for (iden in unique(data$ID)) {

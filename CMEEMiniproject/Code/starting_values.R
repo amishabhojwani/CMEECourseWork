@@ -8,8 +8,15 @@ data <- read.csv("../Data/CRat.csv")
 # get sample params for every subset to fit HollT2 model #
 ##########################################################
 
+#if parameter estimate is negative, set it to 0
+set0 <- function(number) {
+  if(number < 0) number = 0
+  return(number)
+}
+
 success_counter <- c()
 for (iden in unique(data$ID)) {
+  
   # load subset
   subdata <- read.csv(paste("../Data/data_subsets/subset_", iden, ".csv", sep=""))
   
@@ -23,10 +30,13 @@ for (iden in unique(data$ID)) {
   a.est=Fmax/Nhalf
   
   # sample the estimates
-  a = runif(1000, min = a.est - abs(a.est*0.1), max = a.est + abs(a.est*0.1))
-  h = runif(1000, min = h.est - abs(h.est*0.1), max = h.est + abs(h.est*0.1))
-  sample.params = cbind(a, h)
+  a = runif(1000, min = a.est - abs(a.est), max = a.est + abs(a.est))
+  h = runif(1000, min = h.est - abs(h.est), max = h.est + abs(h.est))
   
+  for (i in 1:length(a)) set0(i) #there cannot be negative parameters so we set negative values to 0
+  for (i in 1:length(h)) set0(i)
+  
+  sample.params = cbind(a, h) #output parameters table
   write.csv(sample.params, paste("../Results/sample_params/subset_", iden, "_sample_params.csv", sep=""), row.names = FALSE)
   success_counter <- append(success_counter, iden)
 }

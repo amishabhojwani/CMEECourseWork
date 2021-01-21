@@ -4,3 +4,10 @@
 *.RData
 *.log
 *.aux
+Results/
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.gz
+*.toc
