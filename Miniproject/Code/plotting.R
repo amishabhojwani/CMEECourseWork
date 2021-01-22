@@ -112,7 +112,7 @@ for (iden in unique(data$ID)) {
 plotting_subs <- subset(data, data$ID==39838 | data$ID==39889 | data$ID==39893) #these are the subsets i want to show in the report
 
 for (iden in unique(plotting_subs$ID)) { #create a data frame for all their HollT2 plotting values by ID
-  tmp <- read.csv(paste("../Results/HollT2_plotting_dfs/HollT2_dfplot_subset_", iden, sep=""))
+  tmp <- read.csv(paste("../Results/HollT2_plotting_dfs/HollT2_dfplot_subset_", iden, ".csv", sep=""))
   ID <- rep(iden, nrow(as.matrix(tmp)))
   assign(paste("subs", iden, sep=""), cbind(ID, tmp))
 }

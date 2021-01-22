@@ -10,14 +10,17 @@
 # Shows the use of variables
 MyVar='some string'
 echo 'the current value of the variable is' $MyVar
-echo 'Please enter a new string'
+echo 'Please enter a new string, or default values will be used'
 read MyVar
-echo 'the current value of the variable is' $MyVar
+
+echo 'the current value of the variable is' ${MyVar:='some other string'}
+
+printf "\n"
 
 ## Reading multiple values
-echo 'Enter two numbers separated by space(s)'
+echo 'Enter two numbers separated by space(s), or default values will be used'
 read a b
-echo 'you entered' $a 'and' $b '. Their sum is:'
+echo 'The numbers are' ${a:=2} 'and' ${b:=3}'. Their sum is:'
 mysum=`expr $a + $b`
 echo $mysum
 
